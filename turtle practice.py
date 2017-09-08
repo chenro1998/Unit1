@@ -1,60 +1,48 @@
+# Kevin Chen
+# 09/08/17
+# turtle practice
+# draw four Octagon in four different colors.
+
 import turtle
 
-def drawOctagon(side_length):
+
+def drawOctagon(side_length, color):
+    turtle.color(color)
+    turtle.begin_fill()
     for x in range(8):
         turtle.forward(side_length)
         turtle.left(45)
+    turtle.end_fill()
+
+
+def moveTurtle(x, y):
+    turtle.penup()
+    turtle.goto(x, y)
+    turtle.pendown()
+
 
 turtle.speed(5)
 
-turtle.color("red")
 
-turtle.begin_fill()
+drawOctagon(100, "red")
 
-drawOctagon(100)
 
-turtle.end_fill()
+moveTurtle(400, 0)
 
-turtle.penup()
 
-turtle.goto(400,0)
+drawOctagon(100, "green")
 
-turtle.color("green")
 
-turtle.pendown()
+moveTurtle(400, -300)
 
-turtle.begin_fill()
 
-drawOctagon(100)
+drawOctagon(100, "yellow")
 
-turtle.end_fill()
 
-turtle.penup()
+moveTurtle(0, -300)
 
-turtle.goto(400,-300)
 
-turtle.color("yellow")
+drawOctagon(100, "pink")
 
-turtle.pendown()
-
-turtle.begin_fill()
-
-drawOctagon(100)
-
-turtle.end_fill()
-
-turtle.penup()
-
-turtle.goto(0,-300)
-
-turtle.color("pink")
-
-turtle.pendown()
-
-turtle.begin_fill()
-
-drawOctagon(100)
-
-turtle.end_fill()
 
 turtle.exitonclick()
